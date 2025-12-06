@@ -82,11 +82,11 @@ const ContactPage = () => {
       <div className="section-glow -top-32 left-[-12%]" />
       <div className="section-glow section-glow--blue bottom-[-16rem] right-[-8rem]" />
       <div className="section-content">
-        <div className="text-center lg:mt-[5%] mt-10 mb-2 sm:px-0 px-[5%]">
+        <div className="px-6 mt-8 mb-2 text-center md:mt-12 lg:mt-14 sm:px-8 lg:px-0">
           <h2
             data-aos="fade-down"
             data-aos-duration="1000"
-            className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto accent-heading"
+            className="inline-block mx-auto text-3xl font-bold text-center md:text-5xl accent-heading"
           >
             <span
               style={{
@@ -104,22 +104,22 @@ const ContactPage = () => {
           <p
             data-aos="fade-up"
             data-aos-duration="1100"
-            className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2"
+            className="max-w-2xl mx-auto mt-2 text-sm text-slate-400 md:text-base"
           >
             Got a question? Send me a message, and I'll get back to you soon.
           </p>
         </div>
 
-        <div className="h-auto py-10 flex items-center justify-center px-[5%] md:px-0">
-          <div className="container px-[1%] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-[45%_55%] 2xl:grid-cols-[35%_65%] gap-12">
+        <div className="flex items-center justify-center h-auto px-6 py-12 md:py-16 lg:py-20 md:px-10 lg:px-16">
+          <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-[45%_55%] 2xl:grid-cols-[38%_62%] gap-8 lg:gap-12">
             <div
               data-aos="fade-right"
               data-aos-duration="1200"
-              className="glow-card rounded-3xl shadow-2xl p-5 py-10 sm:p-10 transform transition-all duration-300 hover:shadow-[0_40px_60px_rgba(250,204,21,0.18)]"
+              className="glow-card rounded-3xl shadow-2xl p-6 md:p-8 lg:p-10 space-y-6 transform transition-all duration-300 hover:shadow-[0_40px_60px_rgba(250,204,21,0.18)]"
             >
-              <div className="flex justify-between items-start mb-8">
+              <div className="flex items-start justify-between mb-8">
                 <div>
-                  <h2 className="text-4xl font-bold mb-3 accent-heading">
+                  <h2 className="mb-3 text-4xl font-bold accent-heading">
                     Get in Touch
                   </h2>
                   <p className="text-gray-400">
@@ -201,12 +201,12 @@ const ContactPage = () => {
                 </button>
               </form>
 
-              <div className="mt-10 pt-6 border-t border-white/10 flex justify-center space-x-6">
+              <div className="flex justify-center pt-6 mt-8 space-x-6 border-t md:mt-10 border-white/10">
                 <SocialLinks />
               </div>
             </div>
 
-            <div className="glow-card rounded-3xl p-3 py-3 md:p-10 md:py-8 shadow-2xl transform transition-all duration-300 hover:shadow-[0_36px_50px_rgba(250,204,21,0.18)]">
+            <div className="glow-card rounded-3xl p-6 md:p-8 lg:p-10 shadow-2xl transform transition-all duration-300 hover:shadow-[0_36px_50px_rgba(250,204,21,0.18)]">
               <Komentar />
             </div>
           </div>
