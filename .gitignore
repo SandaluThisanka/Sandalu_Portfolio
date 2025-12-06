@@ -24,7 +24,6 @@ node_modules
 # Sublime Text files
 /dist
 src/assets/
-src/components/Commentar.jsx
 src/firebase-comment.js
 src/firebase.js
 /public
