@@ -32,12 +32,12 @@ const ToggleButton = ({ onClick, isShowingMore }) => (
       flex 
       items-center 
       gap-2
-      bg-white/5 
-      hover:bg-white/10
+      bg-[rgba(250,204,21,0.08)] 
+      hover:bg-[rgba(250,204,21,0.14)]
       rounded-md
       border 
-      border-white/10
-      hover:border-white/20
+      border-[rgba(250,204,21,0.25)]
+      hover:border-[rgba(250,204,21,0.4)]
       backdrop-blur-sm
       group
       relative
@@ -65,7 +65,7 @@ const ToggleButton = ({ onClick, isShowingMore }) => (
         <polyline points={isShowingMore ? "18 15 12 9 6 15" : "6 9 12 15 18 9"}></polyline>
       </svg>
     </span>
-    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500/50 transition-all duration-300 group-hover:w-full"></span>
+    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[rgba(250,204,21,0.5)] transition-all duration-300 group-hover:w-full"></span>
   </button>
 );
 
@@ -178,27 +178,32 @@ export default function FullWidthTabs() {
   );
 
   return (
-    <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="Portofolio">
-      {/* Header section - unchanged */}
-      <div className="text-center pb-10" data-aos="fade-up" data-aos-duration="1000">
-        <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-          <span style={{
-            color: '#6366f1',
-            backgroundImage: 'linear-gradient(45deg, #6366f1 10%, #a855f7 93%)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
-          }}>
-            Portfolio Showcase
-          </span>
-        </h2>
-        <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
-          Explore my journey through projects, certifications, and technical expertise. 
-          Each section represents a milestone in my continuous learning path.
-        </p>
-      </div>
+    <div className="page-section md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] overflow-hidden" id="Portofolio">
+      <div className="section-glow -top-36 left-[-12%]" />
+      <div className="section-glow section-glow--pink bottom-[-14rem] right-[-10%]" />
+      <div className="section-content">
+        {/* Header section - unchanged */}
+        <div className="text-center pb-10" data-aos="fade-up" data-aos-duration="1000">
+          <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto accent-heading">
+            <span
+              style={{
+                color: '#facc15',
+                backgroundImage: 'linear-gradient(45deg, #facc15 10%, #fbbf24 93%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >
+              Portfolio Showcase
+            </span>
+          </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
+            Explore my journey through projects, certifications, and technical expertise. 
+            Each section represents a milestone in my continuous learning path.
+          </p>
+        </div>
 
-      <Box sx={{ width: "100%" }}>
+        <Box sx={{ width: "100%" }}>
         {/* AppBar and Tabs section - unchanged */}
         <AppBar
           position="static"
@@ -221,7 +226,7 @@ export default function FullWidthTabs() {
               zIndex: 0,
             },
           }}
-          className="md:px-4"
+          className="md:px-4 glow-card"
         >
           {/* Tabs remain unchanged */}
           <Tabs
@@ -234,31 +239,32 @@ export default function FullWidthTabs() {
               // Existing styles remain unchanged
               minHeight: "70px",
               "& .MuiTab-root": {
-                fontSize: { xs: "0.9rem", md: "1rem" },
-                fontWeight: "600",
-                color: "#94a3b8",
-                textTransform: "none",
-                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                padding: "20px 0",
-                zIndex: 1,
-                margin: "8px",
-                borderRadius: "12px",
-                "&:hover": {
-                  color: "#ffffff",
-                  backgroundColor: "rgba(139, 92, 246, 0.1)",
-                  transform: "translateY(-2px)",
-                  "& .lucide": {
-                    transform: "scale(1.1) rotate(5deg)",
+                  fontSize: { xs: "0.9rem", md: "1rem" },
+                  fontWeight: "600",
+                  color: "rgba(255, 250, 209, 0.6)",
+                  textTransform: "none",
+                  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                  padding: "20px 0",
+                  zIndex: 1,
+                  margin: "8px",
+                  borderRadius: "12px",
+                  "&:hover": {
+                    color: "#fef9c3",
+                    backgroundColor: "rgba(250, 204, 21, 0.12)",
+                    transform: "translateY(-2px)",
+                    "& .lucide": {
+                      transform: "scale(1.1) rotate(5deg)",
+                      color: "#facc15",
+                    },
                   },
-                },
-                "&.Mui-selected": {
-                  color: "#fff",
-                  background: "linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2))",
-                  boxShadow: "0 4px 15px -3px rgba(139, 92, 246, 0.2)",
-                  "& .lucide": {
-                    color: "#a78bfa",
+                  "&.Mui-selected": {
+                    color: "#fefce8",
+                    background: "linear-gradient(135deg, rgba(250, 204, 21, 0.22), rgba(251, 191, 36, 0.2))",
+                    boxShadow: "0 4px 15px -3px rgba(250, 204, 21, 0.28)",
+                    "& .lucide": {
+                      color: "#facc15",
+                    },
                   },
-                },
               },
               "& .MuiTabs-indicator": {
                 height: 0,
@@ -387,7 +393,8 @@ export default function FullWidthTabs() {
             </div>
           </TabPanel>
         </SwipeableViews>
-      </Box>
+        </Box>
+      </div>
     </div>
   );
 }

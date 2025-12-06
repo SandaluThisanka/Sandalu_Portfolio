@@ -54,7 +54,7 @@ const ProjectStats = ({ project }) => {
   const featuresCount = project?.Features?.length || 0;
 
   return (
-    <div className="grid grid-cols-2 gap-3 md:gap-4 p-3 md:p-4 bg-[#0a0a1a] rounded-xl overflow-hidden relative">
+    <div className="glow-card grid grid-cols-2 gap-3 md:gap-4 p-3 md:p-4 rounded-2xl overflow-hidden relative">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 opacity-50 blur-2xl z-0" />
 
       <div className="relative z-10 flex items-center space-x-2 md:space-x-3 bg-white/5 p-2 md:p-3 rounded-lg border border-blue-500/20 transition-all duration-300 hover:scale-105 hover:border-blue-500/50 hover:shadow-lg">
@@ -127,8 +127,10 @@ const ProjectDetails = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-[#030014] flex items-center justify-center">
-        <div className="text-center space-y-6 animate-fadeIn">
+      <div className="page-section min-h-screen flex items-center justify-center">
+        <div className="section-glow -top-32 left-[-15%]" />
+        <div className="section-glow section-glow--blue bottom-[-18rem] right-[-12%]" />
+        <div className="section-content text-center space-y-6 animate-fadeIn">
           <div className="w-16 h-16 md:w-24 md:h-24 mx-auto border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin" />
           <h2 className="text-xl md:text-3xl font-bold text-white">Loading Project...</h2>
         </div>
@@ -137,7 +139,9 @@ const ProjectDetails = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#030014] px-[2%] sm:px-0 relative overflow-hidden">
+    <div className="page-section min-h-screen px-[2%] sm:px-0 relative overflow-hidden">
+      <div className="section-glow -top-40 -left-24" />
+      <div className="section-glow section-glow--pink bottom-[-20rem] right-[-12%]" />
       {/* Background animations remain unchanged */}
       <div className="fixed inset-0">
         <div className="absolute -inset-[10px] opacity-20">
@@ -148,7 +152,7 @@ const ProjectDetails = () => {
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02]" />
       </div>
 
-      <div className="relative">
+      <div className="section-content relative">
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-16">
           <div className="flex items-center space-x-2 md:space-x-4 mb-8 md:mb-12 animate-fadeIn">
             <button
@@ -242,7 +246,7 @@ const ProjectDetails = () => {
               </div>
 
               {/* Fitur Utama */}
-              <div className="bg-white/[0.02] backdrop-blur-xl rounded-2xl p-8 border border-white/10 space-y-6 hover:border-white/20 transition-colors duration-300 group">
+              <div className="glow-card rounded-2xl p-8 space-y-6 transition-colors duration-300 group">
                 <h3 className="text-xl font-semibold text-white/90 flex items-center gap-3">
                   <Star className="w-5 h-5 text-yellow-400 group-hover:rotate-[20deg] transition-transform duration-300" />
                   Key Features

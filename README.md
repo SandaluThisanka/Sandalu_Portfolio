@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Sandalu_Portfolio
-My personal portfolio showcasing projects, skills, and achievements as an undergraduate Software Engineering student at NIBM.
-=======
 # <div align="center">My Digital Space! <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35">
 
 <div align="center">
@@ -119,4 +115,71 @@ My personal portfolio showcasing projects, skills, and achievements as an underg
 - UI/UX Design
 
 > "Building innovative solutions one line of code at a time"
->>>>>>> ad9617a (My Portfolio)
+
+## Run locally
+
+1. Install dependencies (use legacy flag to avoid peer conflicts):
+```bash
+npm install --legacy-peer-deps
+```
+
+2. Start Vite dev server:
+```bash
+npm run dev
+# or if package.json has no dev script:
+npx vite
+```
+Open http://localhost:5173
+
+3. To build production output:
+```bash
+npm run build
+# output will be in /dist
+```
+
+4. If you plan to deploy to GitHub Pages:
+- Ensure `vite.config.js` has `base: '/<repo-name>/'` (e.g. "/Portfolio-sandalu/")
+- Ensure `package.json` deploy script publishes `dist` (gh-pages -d dist)
+- Build then deploy:
+```bash
+npm run build
+npm run deploy
+```
+
+Troubleshooting:
+- If npm install fails with ERESOLVE, use `--legacy-peer-deps`.
+- If you use react-router, set BrowserRouter basename to the repo path when deploying:
+  <BrowserRouter basename="/Portfolio-sandalu">...</BrowserRouter>
+- If dev server starts but page looks broken, inspect console and the terminal build logs for errors.
+
+## Quick run checklist
+1. Install Node.js (v16+ recommended). Verify:
+   ```bash
+   node -v && npm -v
+   ```
+2. From project root run:
+   ```bash
+   npm install --legacy-peer-deps
+   npm run dev
+   # or if no dev script:
+   npx vite
+   ```
+3. Open the dev URL (usually http://localhost:5173).
+
+If you get dependency conflicts, use the --legacy-peer-deps flag as above.
+
+### Sample package.json scripts (add if missing)
+```json
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  }
+}
+```
+
+### GitHub Pages / Deployment notes
+- Set vite.config.js base to "/Portfolio-sandalu/" if deploying to GitHub Pages.
+- If using React Router, set BrowserRouter basename to "/Portfolio-sandalu".

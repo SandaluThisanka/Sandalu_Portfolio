@@ -1,13 +1,18 @@
 {
-  "name": "portofolio-v5",
+  "name": "portfolio-sandalu",
+  "homepage": "https://sandaluthisanka.github.io/Portfolio-sandalu",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "vite",
     "build": "vite build",
+    "preview": "vite preview",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "test": "echo \"No tests configured\" && exit 0",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -35,6 +40,7 @@
     "react-dom": "^18.0.0",
     "react-intersection-observer": "^9.13.1",
     "react-router-dom": "^6.28.0",
+    "react-scripts": "^5.0.1",
     "react-swipeable-views": "^0.14.0",
     "shadcn-ui": "^0.2.3",
     "spline": "^0.0.0",
@@ -53,6 +59,7 @@
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
+    "gh-pages": "^6.3.0",
     "globals": "^15.11.0",
     "postcss": "^8.4.47",
     "tailwind-scrollbar": "^3.1.0",

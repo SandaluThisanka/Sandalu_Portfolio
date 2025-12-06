@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useCallback, memo } from "react"
-import { Github, Linkedin, Mail, ExternalLink, Instagram, Sparkles} from "lucide-react"
-import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+import { Github, Linkedin, Mail, ExternalLink, Sparkles } from "lucide-react"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import NeonTrails from "../components/NeonTrails"
 
 // Memoized Components
 const StatusBadge = memo(() => (
-  <div className="inline-block animate-float lg:mx-0" data-aos="zoom-in" data-aos-delay="400">
+  <div className="inline-block animate-soft-bounce lg:mx-0" data-aos="zoom-in" data-aos-delay="400">
     <div className="relative group">
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
-      <div className="relative px-3 sm:px-4 py-2 rounded-full bg-black/40 backdrop-blur-xl border border-white/10">
-        <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-transparent bg-clip-text sm:text-sm text-[0.7rem] font-medium flex items-center">
-          <Sparkles className="sm:w-4 sm:h-4 w-3 h-3 mr-2 text-blue-400" />
-          Ready to Innovate
-        </span>
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#facc15] via-[#fbbf24] to-[#f59e0b] rounded-full blur opacity-30 group-hover:opacity-55 transition duration-1000"></div>
+        <div className="relative px-3 sm:px-4 py-2 rounded-full bg-black/40 backdrop-blur-xl border border-[rgba(250,204,21,0.32)]">
+          <span className="accent-subheading sm:text-sm text-[0.7rem] font-medium flex items-center">
+            <Sparkles className="sm:w-4 sm:h-4 w-3 h-3 mr-2 text-[rgba(250,204,21,0.88)]" />
+            Ready to Innovate
+          </span>
       </div>
     </div>
   </div>
@@ -21,17 +21,17 @@ const StatusBadge = memo(() => (
 
 const MainTitle = memo(() => (
   <div className="space-y-2" data-aos="fade-up" data-aos-delay="600">
-    <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
+    <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl">
       <span className="relative inline-block">
-        <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
-        <span className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+        <span className="absolute -inset-2 bg-gradient-to-r from-[#facc15] via-[#fbbf24] to-[#f59e0b] blur-2xl opacity-30"></span>
+         <span className="relative accent-heading">
           Fullstack
         </span>
       </span>
       <br />
       <span className="relative inline-block mt-2">
-        <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
-        <span className="relative bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+        <span className="absolute -inset-2 bg-gradient-to-r from-[#facc15] via-[#fbbf24] to-[#f59e0b] blur-2xl opacity-30"></span>
+         <span className="relative accent-heading">
           Developer
         </span>
       </span>
@@ -40,34 +40,33 @@ const MainTitle = memo(() => (
 ));
 
 const TechStack = memo(({ tech }) => (
-  <div className="px-4 py-2 hidden sm:block rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-gray-300 hover:bg-white/10 transition-colors">
+  <div className="hidden glass-chip sm:block">
     {tech}
   </div>
 ));
 
-const CTAButton = memo(({ href, text, icon: Icon }) => (
-  <a href={href}>
-    <button className="group relative w-[160px]">
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#4f52c9] to-[#8644c5] rounded-xl opacity-50 blur-md group-hover:opacity-90 transition-all duration-700"></div>
-      <div className="relative h-11 bg-[#030014] backdrop-blur-xl rounded-lg border border-white/10 leading-none overflow-hidden">
-        <div className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 bg-gradient-to-r from-[#4f52c9]/20 to-[#8644c5]/20"></div>
-        <span className="absolute inset-0 flex items-center justify-center gap-2 text-sm group-hover:gap-3 transition-all duration-300">
-          <span className="bg-gradient-to-r from-gray-200 to-white bg-clip-text text-transparent font-medium z-10">
-            {text}
-          </span>
-          <Icon className={`w-4 h-4 text-gray-200 ${text === 'Contact' ? 'group-hover:translate-x-1' : 'group-hover:rotate-45'} transform transition-all duration-300 z-10`} />
-        </span>
-      </div>
-    </button>
+const CTAButton = memo(({ href, text, icon: Icon, variant = "solid" }) => (
+  <a
+    href={href}
+    className={`${variant === "solid" ? "btn-futuristic" : "btn-outline-futuristic"} group`}
+  >
+    <span>{text}</span>
+    {Icon ? (
+      <Icon
+        className={`w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 ${
+          variant === "solid" ? "text-[rgba(12,13,24,0.85)]" : "text-slate-200"
+        }`}
+      />
+    ) : null}
   </a>
 ));
 
 const SocialLink = memo(({ icon: Icon, link }) => (
   <a href={link} target="_blank" rel="noopener noreferrer">
-    <button className="group relative p-3">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
-      <div className="relative rounded-xl bg-black/50 backdrop-blur-xl p-2 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-all duration-300">
-        <Icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+    <button className="relative p-3 group">
+      <div className="absolute inset-0 bg-gradient-to-r from-[#facc15] via-[#fbbf24] to-[#f59e0b] rounded-xl blur opacity-20 group-hover:opacity-45 transition duration-300"></div>
+      <div className="relative flex items-center justify-center p-2 transition-all duration-300 border rounded-xl bg-black/50 backdrop-blur-xl border-[rgba(250,204,21,0.25)] group-hover:border-[rgba(250,204,21,0.45)]">
+        <Icon className="w-5 h-5 text-stone-200 transition-colors group-hover:text-white" />
       </div>
     </button>
   </a>
@@ -78,7 +77,7 @@ const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
 const WORDS = ["FrontEnd Developer", "BackEnd Developer"];
-const TECH_STACK = ["React", "Javascript", "Node.js","Flutter",""];
+const TECH_STACK = ["React", "Javascript", "Node.js", "Flutter"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/SandaluThisanka" },
   { icon: Linkedin, link: "https://www.linkedin.com/in/sandalu-thisanka-719564334/" }
@@ -90,7 +89,6 @@ const Home = () => {
   const [wordIndex, setWordIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [isHovering, setIsHovering] = useState(false)
 
   // Optimize AOS initialization
   useEffect(() => {
@@ -139,31 +137,15 @@ const Home = () => {
     );
     return () => clearTimeout(timeout);
   }, [handleTyping]);
-
-  // Lottie configuration
-  const lottieOptions = {
-    src: "https://lottie.host/58753882-bb6a-49f5-a2c0-950eda1e135a/NLbpVqGegK.lottie",
-    loop: true,
-    autoplay: true,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-      progressiveLoad: true,
-    },
-    style: { width: "100%", height: "100%" },
-    className: `w-full h-full transition-all duration-500 ${
-      isHovering 
-        ? "scale-[180%] sm:scale-[160%] md:scale-[150%] lg:scale-[145%] rotate-2" 
-        : "scale-[175%] sm:scale-[155%] md:scale-[145%] lg:scale-[140%]"
-    }`
-  };
-
   return (
-    <div className="min-h-screen bg-[#030014] overflow-hidden" id="Home">
-      <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
+    <div className="min-h-screen overflow-hidden page-section" id="Home">
+      <div className="section-glow -top-32 -left-24" />
+      <div className="section-glow section-glow--blue bottom-[-18rem] right-[-10rem]" />
+      <div className={`section-content z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
         <div className="container mx-auto px-[5%] sm:px-6 lg:px-[0%] min-h-screen">
-          <div className="flex flex-col lg:flex-row items-center justify-center h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20">
+          <div className="flex flex-col items-center justify-center h-screen gap-0 lg:flex-row md:justify-between sm:gap-12 lg:gap-20">
             {/* Left Column */}
-            <div className="w-full lg:w-1/2 space-y-6 sm:space-y-8 text-left lg:text-left order-1 lg:order-1 lg:mt-0"
+            <div className="order-1 w-full space-y-6 text-left lg:w-1/2 sm:space-y-8 lg:text-left lg:order-1 lg:mt-0"
               data-aos="fade-right"
               data-aos-delay="200">
               <div className="space-y-4 sm:space-y-6">
@@ -171,35 +153,35 @@ const Home = () => {
                 <MainTitle />
 
                 {/* Typing Effect */}
-                <div className="h-8 flex items-center" data-aos="fade-up" data-aos-delay="800">
-                  <span className="text-xl md:text-2xl bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent font-light">
+                <div className="flex items-center h-8" data-aos="fade-up" data-aos-delay="800">
+                  <span className="text-xl font-light text-transparent md:text-2xl bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text">
                     {text}
                   </span>
-                  <span className="w-[3px] h-6 bg-gradient-to-t from-[#6366f1] to-[#a855f7] ml-1 animate-blink"></span>
+                  <span className="w-[3px] h-6 bg-gradient-to-t from-[#facc15] to-[#f59e0b] ml-1 animate-blink"></span>
                 </div>
 
                 {/* Description */}
-                <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
+                <p className="max-w-xl text-base font-light leading-relaxed text-gray-400 md:text-lg"
                   data-aos="fade-up"
                   data-aos-delay="1000">
                   I am passionate about delivering high-quality software that exceeds expectations.
                 </p>
 
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-3 justify-start" data-aos="fade-up" data-aos-delay="1200">
+                <div className="flex flex-wrap justify-start gap-3" data-aos="fade-up" data-aos-delay="1200">
                   {TECH_STACK.map((tech, index) => (
                     <TechStack key={index} tech={tech} />
                   ))}
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-row gap-3 w-full justify-start" data-aos="fade-up" data-aos-delay="1400">
+                <div className="flex flex-row justify-start w-full gap-3" data-aos="fade-up" data-aos-delay="1400">
                   <CTAButton href="#Portofolio" text="Projects" icon={ExternalLink} />
-                  <CTAButton href="#Contact" text="Contact" icon={Mail} />
+                  <CTAButton href="#Contact" text="Contact" icon={Mail} variant="outline" />
                 </div>
 
                 {/* Social Links */}
-                <div className="hidden sm:flex gap-4 justify-start" data-aos="fade-up" data-aos-delay="1600">
+                <div className="justify-start hidden gap-4 sm:flex" data-aos="fade-up" data-aos-delay="1600">
                   {SOCIAL_LINKS.map((social, index) => (
                     <SocialLink key={index} {...social} />
                   ))}
@@ -207,32 +189,18 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Column - Optimized Lottie Animation */}
-            <div className="w-full py-[10%] sm:py-0 lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
+            {/* Right Column - Neon Track Illustration */}
+            <div
+              className="flex items-center justify-center order-2 w-full h-full mt-12 lg:w-1/2 lg:order-2 lg:mt-0"
               data-aos="fade-left"
-              data-aos-delay="600">
-              <div className="relative w-full opacity-90">
-                <div className={`absolute inset-0 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out ${
-                  isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
-                }`}>
+              data-aos-delay="600"
+            >
+              <div className="relative w-full max-w-[540px] xl:max-w-[620px]">
+                <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-[#0b1028] via-[#0a0d24] to-[#111938] blur-3xl opacity-70"></div>
+                <div className="relative rounded-[2.5rem] overflow-visible border border-white/5 shadow-[0_38px_60px_rgba(3,5,18,0.55)]">
+                  <NeonTrails />
                 </div>
-
-                <div className={`relative z-10 w-full opacity-90 transform transition-transform duration-500 ${
-                  isHovering ? "scale-105" : "scale-100"
-                }`}>
-                  <DotLottieReact {...lottieOptions} />
-                </div>
-
-                <div className={`absolute inset-0 pointer-events-none transition-all duration-700 ${
-                  isHovering ? "opacity-50" : "opacity-20"
-                }`}>
-                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-indigo-500/10 to-purple-500/10 blur-3xl animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite] transition-all duration-700 ${
-                    isHovering ? "scale-110" : "scale-100"
-                  }`}>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>
