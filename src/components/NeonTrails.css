@@ -1,7 +1,0 @@
-.neon-trails { position: relative; box-sizing: border-box; }
-@keyframes pulse-slow {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.12); opacity: 0.6; }
-  100% { transform: scale(1); opacity: 1; }
-}
-.animate-pulse-slow { animation: pulse-slow 2.4s ease-in-out infinite; }
