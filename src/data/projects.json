@@ -1,0 +1,198 @@
+[
+    {
+      "id": 1,
+      "Title": "Library Management System",
+      "Description": "C# Project",
+      "Img": "assets/library.jpeg",
+      "Link": "",
+      "Github": "https://github.com/SandaluThisanka/Library-Management-System-Windows-Form-",
+      "TechStack": ["C#", "SQL Server", ".Net"],
+      "Features": ["Admin User Login", "Income Report View", "Send Email and GSM Moderm Use Send SMS"]
+    },
+    {
+      "id": 2,
+      "Title": "Automated Safety Road System ",
+      "Description": "Electronic Project (Group)",
+      "Img": "assets/OIP.jpeg",
+      "Link": "",
+      "Github": "",
+      "TechStack": ["Electronic"],
+      "Features": ["Pedestrian Crossing.",
+                    "Railway Gate Controller.",
+                    "Night Detection Light System.",
+                    "Color Light System.",
+                    "Car Parking System"
+                  ]
+    },
+    {
+      "id": 3,
+      "Title": "E-Commerce Web Site",
+      "Description": "Project Based on HTML,CSS,Js",
+      "Img": "assets/e-commerce.jpeg",
+      "Link": "",
+      "Github": "https://github.com/SandaluThisanka/Microservice-Frontend",
+      "TechStack": ["HTML", "CSS", "Bootstrap", "JavaScript", "JQuery", "PHP", "MySQL"],	
+      "Features": ["User-Friendly Interface Seamless navigation and engaging design","Secure Transactions: Robust security measures to protect user data.",
+                    "Responsive Design: Optimized for all devices, ensuring a great experience on mobile, tablet, and desktop.",
+                    "Dynamic Content: Real-time product updates and interactive features.",
+                    "Advanced Search and Filtering: Easily find products with a powerful search and filter system.",
+                    "User Accounts: Secure user registration, login, and profile management.",
+                    "Shopping Cart: Simple and intuitive cart system for adding, removing, and viewing items.",
+                    "Product Reviews and Ratings: Customers can leave reviews and ratings for products.",
+                    "Multiple Payment Options ", "Send Email and GSM Moderm Use Send SMS"]
+    },
+    {
+      "id": 4,
+      "Title": "Portfolio Website",
+      "Description": "Project Based on React",
+      "Img": "assets/portfolio.png",
+      "Link": "",
+      "Github": "https://github.com/SandaluThisanka/Sandalu_Portfolio",
+      "TechStack": ["React","EmailJS","CSS"],
+      "Features": ["Responsive Design: Optimized for all devices, ensuring a great experience on mobile, tablet, and desktop.",
+                    "Portfolio Showcase: Display projects, skills, and achievements in an organized and visually appealing manner.",
+                    "Contact Form: Allow visitors to send messages and inquiries directly through the website.",
+                    "Interactive Elements: Engage users with interactive elements like animations, transitions, and hover effects.",
+                    "SEO Optimization: Implement SEO best practices to improve visibility and search engine rankings.",
+                    "Social Media Integration: Connect with visitors through social media links and sharing options."]
+    },
+    
+    {
+  "id": 12,
+  "Title": "LoadMaster Robot",
+  "Description": "Automated Color-Based Sorting and Transportation Robot using Arduino (Group)",
+  "Img": "assets/sort.jpeg",
+  "Link": "",
+  "Github": "https://github.com/SandaluThisanka/LoadMaster-Robot",
+  "TechStack": [
+    "Arduino Uno",
+    "Color Sensor (TCS3200)",
+    "Ultrasonic Sensor",
+    "Load Cell",
+    "DC Motors",
+    "Motor Driver",
+    "Line Following Sensors",
+    "LEDs",
+    "Buzzer"
+  ],
+  "Features": [
+    "Automated Color Sorting: Detects product colors and sorts items accurately.",
+    "Predefined Path Navigation: Follows a fixed route using a line-following mechanism.",
+    "Automated Storage Placement: Places goods in correct storage areas based on color codes.",
+    "Wireless Control: Can be controlled via remote controller or mobile phone.",
+    "Obstacle & Human Detection: Automatically stops to ensure workplace safety.",
+    "Weight Overload Protection: Detects excess weight and alerts users to prevent damage."
+  ]
+}
+,
+    {
+      "id": 13,
+      "Title": "Urban Food E-Commerce Website",
+      "Description": "Project Based on React,OracleDB and MongoDB (Group)",
+      "Img": "assets/food.jpeg",
+      "Link": "",
+      "Github": "https://github.com/SandaluThisanka/Urban_Foods",
+      "TechStack": ["React", "Node.js", "Express", "OracleDB", "MongoDB", "Material UI", "Postman", "Swagger"],
+      "Features": ["User Authentication: Secure login and registration with JWT.",
+                    "Product Management: Add, edit, and delete products with real-time updates.",
+                    "Shopping Cart: Seamless product addition and checkout process.",
+                    "Order Tracking: Real-time order status updates and notifications.",
+                    "Admin Dashboard: Manage users, products, and orders efficiently.",
+                    "Responsive Design: Optimized for all devices, ensuring a great experience on mobile, tablet, and desktop.",
+                    "SEO Optimization: Implement SEO best practices to improve visibility and search engine rankings.",
+                    "Payment Integration: Secure payment processing with multiple options.",
+                    "Real-Time Notifications: Instant updates on order status and promotions.",
+                    "Analytics Dashboard: Insights into user behavior, sales trends, and product performance.",
+                    "Customer Reviews: Allow users to leave feedback and ratings for products."
+                    ]
+    },
+    {
+  "id": 14,
+  "Title": "Ludo Online",
+  "Description": "Multiplayer Online Ludo Game playable on web browsers (Group Project)",
+  "Img": "assets/ludo.png",
+  "Link": "https://youtu.be/YOUR_LUDO_DEMO_VIDEO",
+  "Github": "https://github.com/SandaluThisanka/Ludo-Game",
+  "TechStack": [
+    "Java",
+    "Spring Boot",
+    "WebSocket (STOMP)",
+    "React.js",
+    "REST API",
+    "MySQL / PostgreSQL",
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "Features": [
+    "User Authentication: Register and login using unique usernames.",
+    "Multiplayer Gameplay: Create or join lobbies and play with up to 4 players in real time.",
+    "Real-Time Updates: Dice rolls, token movements, and turns synchronized using WebSockets.",
+    "Standard Ludo Rules: Four tokens per player with accurate turn and movement logic.",
+    "Undo Move Feature: Allows players to undo the last move using stack-based logic.",
+    "Leaderboard System: Displays personal and global rankings using efficient sorting and data structures.",
+    "Mobile-Friendly UI: Fully responsive design for desktop and mobile devices."
+  ]
+},
+{
+  "id": 15,
+  "Title": "Servalk – Service Booking App",
+  "Description": "On-demand service booking platform connecting customers with service providers (Group Project)",
+  "Img": "assets/service.png",
+  "Link": "https://youtu.be/YOUR_SERVALK_DEMO_VIDEO",
+  "Github": "https://github.com/SandaluThisanka/SevaLK",
+  "TechStack": [
+    "Java",
+    "Spring Boot",
+    "REST API",
+    "Firebase",
+    "MySQL",
+    "React.js",
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "Features": [
+    "User Authentication: Customers and service providers can register and log in securely.",
+    "Service Booking System: Users can browse services, select categories, and place booking requests.",
+    "Job Status Tracking: Track booking status including Pending, Accepted, Rejected, Unpaid, Completed, and Cancelled.",
+    "Multiple Service Categories: Supports home services, education, automotive, wellness, technology, and more.",
+    "Flexible Pricing Models: Hourly, fixed fee, daily fee, and price per square foot supported.",
+    "Provider Management: Service providers can accept or reject job requests in real time.",
+    "Payment Status Handling: Tracks unpaid and completed services for better transaction management."
+  ]
+},
+{
+  "id": 16,
+  "Title": "BioPay System",
+  "Description": "Biometric payment system using face recognition with microservices architecture (Group Project)",
+  "Img": "assets/face.jpg",
+  "Link": "https://youtu.be/YOUR_BIOPAY_DEMO_VIDEO",
+  "Github": "https://github.com/SandaluThisanka/Bio_Pay",
+  "TechStack": [
+    "Java",
+    "Spring Boot",
+    "Python",
+    "FastAPI",
+    "Flutter",
+    "React.js",
+    "PostgreSQL",
+    "MongoDB",
+    "Docker",
+    "Nginx",
+    "JWT",
+    "Microservices Architecture"
+  ],
+  "Features": [
+    "Face-Based Payments: Secure payment processing using facial recognition technology.",
+    "Microservices Architecture: Separate biometric and payment services connected via API Gateway.",
+    "Multi-Platform Applications: User and merchant mobile apps (Flutter) with an admin web panel (React).",
+    "Secure Authentication: JWT-based authentication with encrypted data storage.",
+    "Real-Time Verification: Biometric service verifies face data using embeddings instead of raw images.",
+    "Scalable Deployment: Docker-based setup with support for CI/CD and cloud deployment.",
+    "Admin Management Panel: Monitor users, merchants, transactions, and system status."
+  ]
+}
+
+
+  ]
