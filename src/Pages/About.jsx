@@ -52,7 +52,7 @@ const ProfileImage = memo(() => (
           <div className="absolute inset-0 bg-gradient-to-t from-[#f6c500]/20 via-transparent to-[#38bdf8]/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
           
           <img
-            src="/my.png"
+            src="/Sandalu_Portfolio/my.png"
             alt="Profile"
             className="object-cover w-full h-full transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
             loading="lazy"
