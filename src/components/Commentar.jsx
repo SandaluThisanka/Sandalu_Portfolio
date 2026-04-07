@@ -105,6 +105,7 @@ const CommentSection = () => {
     const [comments, setComments] = useState([]);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState('');
+    const commentsEnabled = Boolean(db);
 
     useEffect(() => {
         // Initialize AOS
@@ -115,6 +116,11 @@ const CommentSection = () => {
     }, []);
 
     useEffect(() => {
+        if (!commentsEnabled) {
+            setComments([]);
+            return undefined;
+        }
+
         const commentsRef = collection(db, 'portfolio-comments');
         const q = query(commentsRef, orderBy('createdAt', 'desc'));
         
@@ -125,10 +131,16 @@ const CommentSection = () => {
             }));
             setComments(commentsData);
         });
-    }, []);
+    }, [commentsEnabled]);
 
     const handleCommentSubmit = useCallback(async ({ newComment, userName }) => {
         setError('');
+
+        if (!commentsEnabled) {
+            setError('Comments are temporarily unavailable.');
+            return;
+        }
+
         setIsSubmitting(true);
         
         try {
@@ -143,7 +155,7 @@ const CommentSection = () => {
         } finally {
             setIsSubmitting(false);
         }
-    }, []);
+    }, [commentsEnabled]);
 
     const formatDate = useCallback((timestamp) => {
         if (!timestamp) return '';
@@ -194,7 +206,9 @@ const CommentSection = () => {
                     {comments.length === 0 ? (
                         <div className="py-8 text-center" data-aos="fade-in">
                             <UserCircle2 className="w-12 h-12 mx-auto mb-3 text-[#38bdf8] opacity-50" />
-                            <p className="text-[#848aab]">No comments yet. Start the conversation!</p>
+                            <p className="text-[#848aab]">
+                                {commentsEnabled ? 'No comments yet. Start the conversation!' : 'Comments are temporarily unavailable.'}
+                            </p>
                         </div>
                     ) : (
                         comments.map((comment, index) => (
